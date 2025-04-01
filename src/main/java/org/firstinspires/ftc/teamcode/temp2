@@ -1,0 +1,324 @@
+class Period {
+
+}
+
+class Step {
+    public double start;
+    public double end;
+
+    Step(double start, double end) {
+        this.start = start;
+        this.end = end;
+    }
+}
+
+double[] durations = {
+    0.2, // park arm and lift
+    2.0, // strafe left
+    2.0, // move arm and lift to high basket
+    2.3, // move back and extend bucket
+    0.1, // ignore do nothing
+    0.5, // retract bucket and go back
+    0.5, // ignore do nothing
+    2.0, // move lift to ground
+    1.0, // rotate to first sample
+    2.5, // move intake to intake position
+    2.5,  // intake block and move forward
+    2.5, // go backward and stop intaking
+    1.0, // move arm to transfer state
+    2.0, // outtake sample
+    0.1, // stop outtaking
+    2.0, // turn back
+    3.0, // move arm to idle position and lift up to sample position
+    2.0, // extend dustpan and drive back
+    0.5, // retract dustpan and drive forward
+    1.0, // move lift to ground and arm to idle
+    1.0, // park arm
+    1.0, //
+    1.0, //
+    1.0, //
+    1.0  //
+};
+
+
+double next_step_start = 0.0;
+double last_step_end = null;
+for (double this_duration : durations) {
+    // Calculate next duration's start and end
+    last_step_end =  start + this_duration;
+    next_start_start = this_duration // for next loop
+    steps.append(new )
+}
+
+ArrayList<Step> steps
+for (int i = 0; i < 25; i++) {
+    while(thisStep.start < time && time < thisStep.end) {
+
+    }
+}
+
+private void auton() {
+        double time = autonomousTimer.seconds();
+
+
+        double step1Duration = 0.2; // park arm and lift
+        double step2Duration = 2.0; // strafe left
+        double step3Duration = 2.0; // move arm and lift to high basket
+        double step4Duration = 2.3; // move back and extend bucket
+        double step5Duration = 0.1; // ignore do nothing
+        double step6Duration = 0.5; // retract bucket and go back
+        double step7Duration = 0.5; // ignore do nothing
+        double step8Duration = 2.0; // move lift to ground
+        double step9Duration = 1.0; // rotate to first sample
+        double step10Duration = 2.5; // move intake to intake position
+        double step11Duration = 2.5;  // intake block and move forward
+        double step12Duration = 2.5; // go backward and stop intaking
+        double step13Duration = 1.0; // move arm to transfer state
+        double step14Duration = 2.0; // outtake sample
+        double step15Duration = 0.1; // stop outtaking
+        double step16Duration = 2.0; // turn back
+        double step17Duration = 3.0; // move arm to idle position and lift up to sample position
+        double step18Duration = 2.0; // extend dustpan and drive back
+        double step19Duration = 0.5; // retract dustpan and drive forward
+        double step20Duration = 1.0; // move lift to ground and arm to idle
+        double step21Duration = 1.0; // park arm
+        double step22Duration = 1.0; //
+        double step23Duration = 1.0; //
+        double step24Duration = 1.0; //
+        double step25Duration = 1.0; //
+
+        double step1Start = 0.0;
+        double step1End = step1Start + step1Duration;
+
+
+        double step2Start = step1End;
+        double step2End = step2Start + step2Duration;
+
+
+        double step3Start = step2End;
+        double step3End = step3Start + step3Duration;
+
+
+        double step4Start = step3End;
+        double step4End = step4Start + step4Duration;
+
+
+        double step5Start = step4End;
+        double step5End = step5Start + step5Duration;
+
+
+        double step6Start = step5End;
+        double step6End = step6Start + step6Duration;
+
+
+        double step7Start = step6End;
+        double step7End = step7Start + step7Duration;
+
+
+        double step8Start = step7End;
+        double step8End = step8Start + step8Duration;
+
+
+        double step9Start = step8End;
+        double step9End = step9Start + step9Duration;
+
+
+        double step10Start = step9End;
+        double step10End = step10Start + step10Duration;
+
+
+        double step11Start = step10End;
+        double step11End = step11Start + step11Duration;
+
+
+        double step12Start = step11End;
+        double step12End = step12Start + step12Duration;
+
+
+        double step13Start = step12End;
+        double step13End = step13Start + step13Duration;
+
+
+        double step14Start = step13End;
+        double step14End = step14Start + step14Duration;
+
+
+        double step15Start = step14End;
+        double step15End = step15Start + step15Duration;
+
+
+        double step16Start = step15End;
+        double step16End = step16Start + step16Duration;
+
+
+        double step17Start = step16End;
+        double step17End = step17Start + step17Duration;
+
+
+        double step18Start = step17End;
+        double step18End = step18Start + step18Duration;
+
+
+        double step19Start = step18End;
+        double step19End = step19Start + step19Duration;
+
+
+        double step20Start = step19End;
+        double step20End = step20Start + step20Duration;
+
+
+        double step21Start = step20End;
+        double step21End = step21Start + step21Duration;
+
+
+        double step22Start = step21End;
+        double step22End = step22Start + step22Duration;
+
+
+        double step23Start = step22End;
+        double step23End = step23Start + step23Duration;
+
+
+        double step24Start = step23End;
+        double step24End = step24Start + step24Duration;
+
+
+        double step25Start = step24End;
+        double step25End = step25Start + step25Duration;
+
+
+        if (time > step1Start && time < step1End && !step1Complete) {
+            currentArmState = ArmState.TRANSFER;
+            currentLiftState = LiftState.GROUND;
+            dustpanState = false;
+            step1Complete = true;
+        }
+        if (time > step2Start && time < step2End && !step2Complete) {
+            strafeLeft(13);
+            step2Complete = true;
+        }
+        if (time > step3Start && time < step3End && !step3Complete) {
+            // step 3 move arm and lift to high basket
+            currentArmState = ArmState.IDLE;
+            currentLiftState = LiftState.SAMPLETRANSFER;
+            dustpanState = false;
+            step3Complete = true;
+        }
+        if (time > step4Start && time < step4End && !step4Complete) {
+            // step 4 move back
+            dustpanState = true;
+            drive(-5);
+            step4Complete = true;
+        }
+        if (time > step5Start && time < step5End && !step5Complete) {
+            step5Complete = true;
+        }
+        if (time > step6Start && time < step6End && !step6Complete) {
+            dustpanState = false;
+            drive(3);
+            step6Complete = true;
+        }
+        if (time > step7Start && time < step7End && !step7Complete) {
+
+            step7Complete = true;
+        }
+        if (time > step8Start && time < step8End && !step8Complete) {
+            currentLiftState = LiftState.GROUND;
+            step8Complete = true;
+        }
+        if (time > step9Start && time < step9End && !step9Complete) {
+            turn(60);
+            step9Complete = true;
+        }
+        if (time > step10Start && time < step10End && !step10Complete) {
+            currentArmState = ArmState.INTAKE;
+            FORWARD_SPEED = -0.2;
+            drive(-4);
+            step10Complete = true;
+        }
+        if (time > step11Start && time < step11End && !step11Complete) {
+            armRoller2.setPower(1 * intakeMotorPower);
+            FORWARD_SPEED = -0.6;
+            drive(10);
+
+            step11Complete = true;
+        }
+        if (time > step12Start && time < step12End && !step12Complete) {
+            // Add your code for step 12 here
+            armRoller2.setPower(0);
+            FORWARD_SPEED = -0.2;
+            drive(-30);
+
+
+            step12Complete = true;
+        }
+        if (time > step13Start && time < step13End && !step13Complete) {
+            currentArmState = ArmState.TRANSFER;
+            step13Complete = true;
+        }
+        if (time > step14Start && time < step14End && !step14Complete) {
+            armRoller2.setPower(-0.3 * intakeMotorPower);
+
+            step14Complete = true;
+        }
+        if (time > step15Start && time < step15End && !step15Complete) {
+            armRoller2.setPower(0);
+            step15Complete = true;
+        }
+        if (time > step16Start && time < step16End && !step16Complete) {
+            // turning after depositing
+            turn(-60);
+
+            step16Complete = true;
+        }
+        if (time > step17Start && time < step17End && !step17Complete) {
+            //
+            currentArmState = ArmState.IDLE;
+            currentLiftState = LiftState.SAMPLETRANSFER;
+            drive(2);
+            step17Complete = true;
+        }
+        if (time > step18Start && time < step18End && !step18Complete) {
+            // Add your code for step 18 here
+            dustpanState = true;
+            drive(-3);
+
+
+            step18Complete = true;
+        }
+        if (time > step19Start && time < step19End && !step19Complete) {
+            // Add your code for step 19 here
+            drive(7);
+            dustpanState = false;
+
+            step19Complete = true;
+        }
+        if (time > step20Start && time < step20End && !step20Complete) {
+            // Add your code for step 20 here
+            currentLiftState = LiftState.GROUND;
+            currentArmState = ArmState.IDLE;
+
+            step20Complete = true;
+        }
+        if (time > step21Start && time < step21End && !step21Complete) {
+            // Add your code for step 21 here
+            currentArmState = ArmState.IDLE;
+            step21Complete = true;
+        }
+        if (time > step22Start && time < step22End && !step22Complete) {
+            // Add your code for step 22 here
+            step22Complete = true;
+        }
+        if (time > step23Start && time < step23End && !step23Complete) {
+            // Add your code for step 23 here
+            step23Complete = true;
+        }
+        if (time > step24Start && time < step24End && !step24Complete) {
+            // Add your code for step 24 here
+            step24Complete = true;
+        }
+        if (time > step25Start && time < step25End && !step25Complete) {
+            // Add your code for step 25 here
+            step25Complete = true;
+        }
+    }
